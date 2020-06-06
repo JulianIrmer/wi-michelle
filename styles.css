@@ -1,0 +1,17 @@
+.container{
+  width: 100%;
+}
+
+.container > input,
+.container > textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+
+.js-submit-button {
+  padding: 10px;
+  background-color: blue;
+  color: white;
+}
