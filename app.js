@@ -34,7 +34,7 @@ app.get('/api/findhotel', (req, res) => {
         if (err) {
             console.error(err);
         } else if (results.length < 1) {
-            res.json({message: 'Keine Hotels gefunden'});
+            res.json({success: false});
         } else {
             res.json(results);
         }
