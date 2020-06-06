@@ -22,12 +22,11 @@ db.on('connect', () => {
 });
 
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
     res.send('<h1>NodeJS Backend running...</h1>');
-    next();
 });
 // Find hotels with the given queries
-app.get('/api/findhotel', (req, res, next) => {
+app.get('/api/findhotel', (req, res) => {
     const destination = req.query.destination;
     console.log(destination);
 
@@ -40,11 +39,10 @@ app.get('/api/findhotel', (req, res, next) => {
             res.json(results);
         }
     });
-    next();
 });
 
 // Return hotel with specific ID
-app.get('/api/getdetails', (req, res, next) => {
+app.get('/api/getdetails', (req, res) => {
     console.log(req.query.id);
     db.Hotels.find({id: req.query.id}, (err, result) => {
         if (err) {
@@ -56,7 +54,6 @@ app.get('/api/getdetails', (req, res, next) => {
             res.json(result);
         }
     });
-    next();
 });
 
 // Update Hotel
